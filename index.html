@@ -1,0 +1,601 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Anatomy Website</title>
+    <!-- for icons  -->
+    <link rel="stylesheet" href="https://unicons.iconscout.com/release/v4.0.0/css/line.css">
+    <!-- bootstrap  -->
+    <link rel="stylesheet" href="assets/css/bootstrap.min.css">
+    <!-- for swiper slider  -->
+    <link rel="stylesheet" href="assets/css/swiper-bundle.min.css">
+
+    <!-- fancy box  -->
+    <link rel="stylesheet" href="assets/css/jquery.fancybox.min.css">
+    <!-- custom css  -->
+    <link rel="stylesheet" href="style.css">
+    <link href="./src/output.css" rel="stylesheet">
+</head>
+
+<body class="h-auto">
+
+        <header class="site-header">
+          <div class="container">
+              <div class="row">  
+                <div class="col-lg-2">
+                    <a href="#">
+                        <img src="/Pic/logoo.png" width="120" height="60" alt="logo">
+                    </a>
+                </div>
+                  <div class="col-lg-10">
+                      <div class="main-navigation">
+                          <button class="menu-toggle"><span></span><span></span></button>
+                          <nav class="header-menu">
+                              <ul class="menu food-nav-menu">
+                                  <li><a href="#">Home</a></li>
+                                  <li><a href="about.html">About</a></li>
+                                  <li><a href="#category">Category</a></li>
+                                  <li><a href="#gallery">Gallery</a></li>
+                                  <li><a href="./Quiz/quiz.html">Quiz</a></li>
+                              </ul>
+                            </nav>
+                      </div>
+                  </div>
+              </div>
+          </div>
+        </header>
+      
+      <div class="viewport">
+          <div id="js-scroll-content">
+            <!--Home section-->
+              <section class="main-banner">
+                  <div class="js-parallax-scene">
+                      <div class="banner-shape-1 w-100" data-depth="0.30">
+                          <img src="Pic/heart.jpg" alt="">
+      
+                      </div>
+                      <div class="banner-shape-2 w-100" data-depth="0.25">
+                          <img src="Pic/body.jpg" alt="">
+      
+                      </div>
+                  </div>
+
+                  <div class="sec-wp">
+                      <div class="container">
+                          <div class="row">
+                              <div class="col-lg-6">
+                                  <div class="banner-text">
+                                      <h1 class="h1-title">
+                                          Education 
+                                         <br>of <span>Human</span>
+                                          Anatomy
+                                      </h1>
+                                      <p>
+                                          Welcome to our website!! Enjoy your time to get knowledge from human anatomy education. 
+                                          Easy to learn & fast learning!! You can get knowledge everywhere!!
+                                      </p>
+                                      <div class="banner-btn mt-4">
+                                          <a href="#category" class="sec-btn">Check Our Catagory</a>
+                                      </div>
+                                  </div>
+                              </div>
+                              <div class="col-lg-6">
+                                  <div class="banner-img-wp">
+                                      <div class="banner-img" style="background-image:url(Pic/main-pic.avif);">
+      
+                                      </div>
+                                      </div>
+                              <div class="banner-img-text mt-4 m-auto">
+                                  <h5 class="h5-title">Anatomy</h5>
+                                  <p>Anatomy is the identification and description of the structures of living things. </p>
+                              </div>
+                          </div>
+                      </div>
+                  </div>
+              </section>
+            
+            <div>
+            <section class="">
+
+                <div class="menu " id="category">
+                    <h1>About <span> Us </span></h1>
+                </div>
+                <div class="about-section">
+                    <p>
+                        Welcome to <span>Education of Human Anatomy,</span> your ultimate resource for understanding the fascinating world of human internal organs.
+                        Our mission is to provide educational resources for those eager to expand their knowledge of human internal organs. 
+                        Our platform offers in-depth, insightful information to support lifelong learning and a deeper understanding 
+                        of<span>3D human anatomy.</span>
+                    </p>
+                    <br>
+                    <p>
+                        With a commitment to scientific accuracy and clarity, we break down complex topics into easy-to-understand explanations, 
+                        complemented by high-quality illustrations and interactive features. Whether you’re studying for an exam, conducting research, 
+                        or simply curious about how your body works, we’re here to support your learning journey.
+
+                        <span>Explore, discover, and deepen your knowledge with us!</span>
+               
+                    </p>
+                </div>
+
+            <!--Category section-->
+                <div class="menu " id="category">
+                    <h1>Our <span> Category </span></h1>
+                    <div class="menu_box">
+                        <div class="menu_card">
+                            
+                            <div class="menu_image">
+                                <!-- <img src="Pic/heart-1.jpg" alt=""> -->
+                                <model-viewer src="3d file/realistic_human_heart.glb" alt="A 3D model" camera-controls auto-rotate="false"></model-viewer>
+                                <script type="module" src="https://unpkg.com/@google/model-viewer/dist/model-viewer.min.js"></script>
+                            </div>
+                            <div class="menu_info">
+                                <h2>Heart</h2>
+
+                                <p>Your muscular heart, the main organ in your cardiovascular system, is vital for life. 
+                                    Its parts work together to move blood through your body in a coordinated way.
+                                    It constantly sends oxygen to your cells and takes away waste. Many conditions can 
+                                    affect this organ and keep it from working well.</p>
+
+                                    <a href="heart.html" class="menu_btn"> Learn More >> </a>                       
+                            </div>
+                        </div>
+                        
+                    </div>
+
+                    <div class="menu_box">
+                        <div class="menu_card">
+                            
+                                <div class="menu_image">
+                                    <!-- <img src="Pic/brain.jpg" alt=""> -->
+                                    <model-viewer src="3d file/Brain.glb" alt="A 3D model" camera-controls auto-rotate="false"></model-viewer>
+                                    <script type="module" src="https://unpkg.com/@google/model-viewer/dist/model-viewer.min.js"></script>
+                                </div>
+                                <div class="menu_info">
+                                    <h2>Brain</h2>
+
+                                    <p>Your brain is an essential organ that controls many body functions.
+                                        Your brain receives and interprets all the sensory information you encounter, like sights, sounds, 
+                                        smells and tastes. Your brain has many complex parts that work together to help you function.</p>
+
+                                        <a href="brain.html" class="menu_btn"> Learn More >> </a>
+                                </div>
+                            
+                        </div>
+                        
+                    </div>
+
+                    <div class="menu_box">
+                        <div class="menu_card">
+                            
+                                <div class="menu_image">
+                                    <!-- <img src="Pic/lung.jpg" alt=""> -->
+                                    <model-viewer src="3d file/Lung.glb" alt="A 3D model" camera-controls auto-rotate="false"></model-viewer>
+                                    <script type="module" src="https://unpkg.com/@google/model-viewer/dist/model-viewer.min.js"></script>
+                                </div>
+                                <div class="menu_info">
+                                    <h2>Lungs</h2>
+
+                                    <p>Your two lungs make oxygen available to your body and remove gases like carbon dioxide. 
+                                        There are many conditions that can affect your lungs. 
+                                        Not smoking may help you prevent some illnesses.</p>
+
+                                        <a href="lungs.html" class="menu_btn"> Learn More >> </a>
+                                </div>
+                            
+                        </div>
+                        
+                    </div>
+
+                    <div class="menu_box">
+                        <div class="menu_card">
+                            
+                                <div class="menu_image">
+                                    <!-- <img src="Pic/liver.jpg" alt=""> -->
+                                    <model-viewer src="3d file/Liver.glb" alt="A 3D model" camera-controls auto-rotate="false"></model-viewer>
+                                    <script type="module" src="https://unpkg.com/@google/model-viewer/dist/model-viewer.min.js"></script>
+                                </div>
+                                <div class="menu_info">
+                                    <h2>Liver</h2>
+
+                                    <p>The liver is a large organ in the abdomen that performs many important bodily functions, 
+                                        including blood filtering. It is also considered a gland because it makes chemicals the 
+                                        body needs. Certain diseases and lifestyles can damage the liver, but there are many ways 
+                                        to protect this vital organ.</p>
+
+                                        <a href="liver.html" class="menu_btn"> Learn More >> </a>
+                                </div>
+                            
+                        </div>
+                        
+                    </div>
+
+                    <div class="menu_box">
+                        <div class="menu_card">
+                            
+                                <div class="menu_image">
+                                    <!-- <img src="Pic/stomach.jpg" alt=""> -->
+                                    <model-viewer src="3d file/Stomach.glb" alt="A 3D model" camera-controls auto-rotate="false"></model-viewer>
+                                    <script type="module" src="https://unpkg.com/@google/model-viewer/dist/model-viewer.min.js"></script>
+                                </div>
+                                <div class="menu_info">
+                                    <h2>Stomach</h2>
+
+                                    <p>Your stomach is a muscular organ that digests food. It is part of your gastrointestinal (GI) tract.
+                                        When your stomach receives food, it contracts and produces acids and enzymes that break down food. 
+                                        When your stomach has broken down food, it passes it to your small intestine.</p>
+
+                                        <a href="stomach.html" class="menu_btn"> Learn More >> </a>
+                                </div>
+                            
+                        </div>
+                        
+                    </div>
+
+                    <div class="menu_box">
+                        <div class="menu_card">
+                            
+                                <div class="menu_image">
+                                    <!-- <img src="Pic/kidney.jpg" alt=""> -->
+                                    <model-viewer src="3d file/Kidney.glb" alt="A 3D model" camera-controls auto-rotate="false"></model-viewer>
+                                    <script type="module" src="https://unpkg.com/@google/model-viewer/dist/model-viewer.min.js"></script>
+                                </div>
+                                <div class="menu_info">
+                                    <h2>Kidney</h2>
+
+                                    <p>Most people have two kidneys, organs that sit in the back of your abdomen. Your kidneys’ primary 
+                                        function is to filter your blood. They also remove waste and balance your body’s fluids. 
+                                        Common kidney conditions include kidney disease, kidney infections and kidney cysts.</p>
+
+                                        <a href="kidney.html" class="menu_btn"> Learn More >> </a>
+                                </div>
+                            
+                        </div>
+                        
+                    </div>
+
+                    <div class="menu_box">
+                        <div class="menu_card">
+                            
+                                <div class="menu_image">
+                                    <!-- <img src="Pic/large.jpg" alt=""> -->
+                                    <model-viewer src="3d file/large instince.glb" alt="A 3D model" camera-controls auto-rotate="false"></model-viewer>
+                                    <script type="module" src="https://unpkg.com/@google/model-viewer/dist/model-viewer.min.js"></script>
+                                </div>
+                                <div class="menu_info">
+                                    <h2>Colon</h2>
+
+                                    <p>The large intestine includes the colon, rectum and anus. It’s all one, long tube that continues 
+                                        from the small intestine as food nears the end of its journey through your digestive system. 
+                                        The large intestine turns food waste into stool and passes it from the body when you poop.</p>
+
+                                        <a href="colon.html" class="menu_btn"> Learn More >> </a>
+                                </div>
+                            
+                        </div>
+                        
+                    </div>
+
+                    <div class="menu_box">
+                        <div class="menu_card">
+                            
+                                <div class="menu_image">
+                                    <!-- <img src="Pic/small.jpg" alt=""> -->
+                                    <model-viewer src="3d file/small instince.glb" alt="A 3D model" camera-controls auto-rotate="false"></model-viewer>
+                                    <script type="module" src="https://unpkg.com/@google/model-viewer/dist/model-viewer.min.js"></script>
+                                </div>
+
+                                <div class="menu_info">
+                                    <h2>Small Bowel </h2>
+
+                                    <p>The small intestine is actually the longest segment of the gastrointestinal tract — the long, 
+                                        continuous pathway that food travels through your digestive system. In the small intestine, 
+                                        food is broken down into liquid and most of its nutrients are absorbed. The waste is passed 
+                                        on to the large intestine.</p>
+
+                                        <a href="small_bowel.html" class="menu_btn"> Learn More >> </a>
+                                </div>
+                            
+                        </div>
+                        
+                </div>
+
+            </section>
+        </div>
+
+        <section class="book-table section bg-light">
+
+            <div class="sec-wp">
+                <div class="container">
+                    <div class="row">
+                        <div class="col-lg-12">
+                            <div class="sec-title text-center mb-5">
+                                <h2 class="h2-title">Gallery</h2>
+                            </div>
+                        </div>
+                    </div>
+
+                    <div class="row" id="gallery">
+                        <div class="col-lg-10 m-auto">
+                            <div class="book-table-img-slider" id="icon">
+                                <div class="swiper-wrapper">
+                                    <iframe width="560" height="315" src="https://www.youtube.com/embed/BJtOg70Sxxc?si=pnxiUNgfpQLsxfC1" title="YouTube video player" frameborder="0" allow="accelerometer; autoplay; clipboard-write; encrypted-media; gyroscope; picture-in-picture; web-share" referrerpolicy="strict-origin-when-cross-origin" allowfullscreen data-fancybox="table-slider"
+                                        class="book-table-img back-img swiper-slide"
+                                        style="background-color: white"></iframe>
+                                        <iframe width="560" height="315" src="https://www.youtube.com/embed/owFnH01SD-s?si=TatXNNoN-TnItAxG" title="YouTube video player" frameborder="0" allow="accelerometer; autoplay; clipboard-write; encrypted-media; gyroscope; picture-in-picture; web-share" referrerpolicy="strict-origin-when-cross-origin" allowfullscreen data-fancybox="table-slider"
+                                        class="book-table-img back-img swiper-slide"
+                                        style="background-color: white"></iframe>
+                                        <iframe width="560" height="315" src="https://www.youtube.com/embed/EGvIyhiNohk?si=0LqMbWCF8mRNDnM7" title="YouTube video player" frameborder="0" allow="accelerometer; autoplay; clipboard-write; encrypted-media; gyroscope; picture-in-picture; web-share" referrerpolicy="strict-origin-when-cross-origin" allowfullscreen data-fancybox="table-slider"
+                                        class="book-table-img back-img swiper-slide"
+                                        style="background-color: white"></iframe>
+                                        <iframe width="560" height="315" src="https://www.youtube.com/embed/Wpxx_TCaqQ4?si=93XJ-GUYTjUSyXjU" title="YouTube video player" frameborder="0" allow="accelerometer; autoplay; clipboard-write; encrypted-media; gyroscope; picture-in-picture; web-share" referrerpolicy="strict-origin-when-cross-origin" allowfullscreen data-fancybox="table-slider"
+                                        class="book-table-img back-img swiper-slide"
+                                        style="background-color: white"></iframe>
+                                        <iframe width="560" height="315" src="https://www.youtube.com/embed/RnoFx0rhERQ?si=D6-QjY_VEumUOhoT" title="YouTube video player" frameborder="0" allow="accelerometer; autoplay; clipboard-write; encrypted-media; gyroscope; picture-in-picture; web-share" referrerpolicy="strict-origin-when-cross-origin" allowfullscreen data-fancybox="table-slider"
+                                        class="book-table-img back-img swiper-slide"
+                                        style="background-color: white"></iframe>
+                                        <iframe width="560" height="315" src="https://www.youtube.com/embed/AFoSkJObSO4?si=FTrqehiqfSECsUCf" title="YouTube video player" frameborder="0" allow="accelerometer; autoplay; clipboard-write; encrypted-media; gyroscope; picture-in-picture; web-share" referrerpolicy="strict-origin-when-cross-origin" allowfullscreen data-fancybox="table-slider"
+                                        class="book-table-img back-img swiper-slide"
+                                        style="background-color: white"></iframe>
+                                        <iframe width="560" height="315" src="https://www.youtube.com/embed/r3GVrC0SBTo?si=_QJfC2oB2MvcaPPO" title="YouTube video player" frameborder="0" allow="accelerometer; autoplay; clipboard-write; encrypted-media; gyroscope; picture-in-picture; web-share" referrerpolicy="strict-origin-when-cross-origin" allowfullscreen data-fancybox="table-slider"
+                                        class="book-table-img back-img swiper-slide"
+                                        style="background-color: white"></iframe>
+                                        <iframe width="560" height="315" src="https://www.youtube.com/embed/UgnF1w-H8vw?si=PdlRm06XiaXXjn7X" title="YouTube video player" frameborder="0" allow="accelerometer; autoplay; clipboard-write; encrypted-media; gyroscope; picture-in-picture; web-share" referrerpolicy="strict-origin-when-cross-origin" allowfullscreen data-fancybox="table-slider"
+                                        class="book-table-img back-img swiper-slide"
+                                        style="background-color: white"></iframe>
+                                </div>
+
+                                <div class="swiper-button-wp">
+                                    <div class="swiper-button-prev swiper-button">
+                                        <i class="uil uil-angle-left"></i>
+                                    </div>
+                                    <div class="swiper-button-next swiper-button">
+                                        <i class="uil uil-angle-right"></i>
+                                    </div>
+                                </div>
+                                <div class="swiper-pagination"></div>
+                            </div>
+                        </div>
+                    </div>
+                </div>
+            </div>
+        </section>
+
+        <section class="faq-sec section-repeat-img" >
+            <div class="sec-wp">
+                <div class="container">
+                    <div class="row">
+                        <div class="col-lg-12">
+                            <div class="sec-title text-center mb-5">
+                                
+                                <h2 class="h2-title">Frequently <span>asked questions</span></h2>
+                                
+                            </div>
+                        </div>
+                    </div>
+
+                    <div class="faq-row">
+                        <div class="faq-box">
+                            <h4 class="h4-title">What is human anatomy, and why is it important?</h4>
+                            <p>Human anatomy is the study of the structure and organization of the human body. Understanding anatomy 
+                            is crucial for medical professionals, students, and anyone interested in health and biology.</p>
+                        </div>
+                        <div class="faq-box">
+                            <h4 class="h4-title">What topics do you cover?</h4>
+                            <p>We cover the structure, function, and importance of internal organs such as the heart, lungs, 
+                            liver, kidneys, brain, and digestive system.
+                            </p>
+                        </div>
+                        <div class="faq-box">
+                            <h4 class="h4-title">Do you offer interactive learning tools?</h4>
+                            <p>Yes, we provide diagrams, 3D models, quizzes, and case studies to enhance learning.</p>
+                        </div>
+                        <div class="faq-box">
+                            <h4 class="h4-title">What is the most important organ in the body?</h4>
+                            <p>Every organ plays a crucial role, but the brain controls body functions, and the heart 
+                            pumps blood, making them essential for survival.</p>
+                        </div>
+                        <div class="faq-box">
+                            <h4 class="h4-title">How can I keep my internal organs healthy?</h4>
+                            <p>Eating a balanced diet, exercising, staying hydrated, and avoiding harmful substances 
+                            like alcohol and tobacco help maintain organ health.
+                            </p>
+                        </div>
+                        <div class="faq-box">
+                            <h4 class="h4-title">How can I ask questions or request specific topics?</h4>
+                            <p>You can contact us through our inquiry form or participate in our discussion forums.</p>
+                        </div>
+                    </div>
+                </div>
+            </div>
+        </section>
+
+        <section class="min-h-screen bg-gray-50 justify-center items-center mt-[100px]">
+            <div class="flex justify-center">
+                <div class="bg-white shadow-lg rounded-xl w-1/2 p-10">
+                    <h2 class="text-4xl font-bold text-gray-800 mb-8 text-center">Contact Us</h2>
+                    <form 
+                        id="contact-form" 
+                        class="space-y-8" 
+                        action="https://formspree.io/f/xvgzrrod"
+                        method="POST">
+                        <!-- Name Field -->
+                        <div>
+                            <label for="user_name" class="block text-lg font-medium text-gray-700">
+                                Name
+                            </label>
+                            <input
+                                type="text"
+                                id="user_name"
+                                name="user_name"
+                                class="mt-2 block w-full p-4 border border-gray-300 rounded-lg shadow-sm focus:ring-indigo-500 focus:border-indigo-500 text-base"
+                                placeholder="Enter your name"
+                                required
+                            />
+                        </div>
+                        <!-- Email Field -->
+                        <div>
+                            <label for="user_email" class="block text-lg font-medium text-gray-700">
+                                Email Address
+                            </label>
+                            <input
+                                type="email"
+                                id="user_email"
+                                name="user_email"
+                                class="mt-2 block w-full p-4 border border-gray-300 rounded-lg shadow-sm focus:ring-indigo-500 focus:border-indigo-500 text-base"
+                                placeholder="Enter your email"
+                                required
+                            />
+                        </div>
+                        <!-- Message Field -->
+                        <div class="flex flex-col">
+                            <label for="message" class="block text-lg font-medium text-gray-700">
+                                Message
+                            </label>
+                            <textarea
+                                id="message"
+                                name="message"
+                                rows="6"
+                                class="mt-2 block w-full p-4 border border-gray-300 rounded-lg shadow-sm focus:ring-indigo-500 focus:border-indigo-500 text-base"
+                                placeholder="Type your message here"
+                                required
+                            ></textarea>
+                        </div>
+                        <!-- Submit Button -->
+                        <div class="flex justify-center items-center ">
+                            <button
+                                type="submit"
+                                class="submitButton"
+                            >
+                                Send Message
+                            </button>
+                        </div>
+                    </form>
+                    <!-- Status Message -->
+                    <p
+                        id="status-message"
+                        class="mt-6 text-center text-green-600 font-semibold hidden"
+                    >
+                        Thank you for reaching out! We’ll get back to you soon.
+                    </p>
+                </div>
+            </div>
+        </section>
+        
+        
+        
+        
+        
+
+          
+   <footer class="site-footer" id="contact">
+    <div class="top-footer section" style="margin-top: 100px;">
+        <div class="sec-wp">
+            <div class="container">
+                <div class="row">
+                    <div class="col-lg-4">
+                        <div class="footer-info">
+                            <div class="footer-logo">
+                                <a href="index.html">
+                                    <img src="/Pic/logoo.png" alt="">
+                                </a>
+                            </div>
+                            <p>Visit our website now!! You will get more knowledge about human antomy.
+                            </p>
+                            
+                        </div>
+                    </div>
+                    <div class="col-lg-8">
+                        <div class="footer-flex-box">
+                           
+                            <div class="footer-menu food-nav-menu">
+                                <h3 class="h3-title">Home page</h3>
+                                <ul class="column-2">
+                                    <li>
+                                        <a href="#home" class="footer-active-menu">Home</a>
+                                    </li>
+                                    <li><a href="#about">About</a></li>
+                                    <li><a href="#catagory">Catagory</a></li>
+                                    <li><a href="#gallery">Gallery</a></li>
+                                    
+                                </ul>
+                            </div>
+                            <div class="footer-menu">
+                                <h3 class="h3-title">Social</h3>
+                                <ul>
+                                    <li><a href="#">Facebook</a></li>
+                                    <li><a href="#">Twitter</a></li>
+                                    <li><a href="#">Instagram</a></li>
+                                    <li><a href="#">LinkedIn</a></li>
+                                </ul>
+                            </div>
+                        </div>
+                    </div>
+                </div>
+            </div>
+        </div>
+    </div>
+    <div class="bottom-footer">
+        <div class="container">
+            <div class="row">
+                <div class="col-lg-12 text-center">
+                    <div class="copyright-text">
+                        <p>Copyright &copy; 2024 <span class="name">Anatomy&Education.</span>All Rights Reserved.
+                        </p>
+                    </div>
+                </div>
+            </div>
+            <button class="scrolltop"><i class="uil uil-angle-up"></i></button>
+        </div>
+    </div>
+</footer>
+      
+          </div>
+    </div>
+
+    <!-- jquery  -->
+    <script src="assets/js/jquery-3.5.1.min.js"></script>
+    <!-- bootstrap -->
+    <script src="assets/js/bootstrap.min.js"></script>
+    <script src="assets/js/popper.min.js"></script>
+
+    <!-- fontawesome  -->
+    <script src="assets/js/font-awesome.min.js"></script>
+
+    <!-- swiper slider  -->
+    <script src="assets/js/swiper-bundle.min.js"></script>
+
+    <!-- mixitup -- filter  -->
+    <script src="assets/js/jquery.mixitup.min.js"></script>
+
+    <!-- fancy box  -->
+    <script src="assets/js/jquery.fancybox.min.js"></script>
+
+    <!-- parallax  -->
+    <script src="assets/js/parallax.min.js"></script>
+
+    <!-- gsap  -->
+    <script src="assets/js/gsap.min.js"></script>
+
+    <!-- scroll trigger  -->
+    <script src="assets/js/ScrollTrigger.min.js"></script>
+    <!-- scroll to plugin  -->
+    <script src="assets/js/ScrollToPlugin.min.js"></script>
+    <!-- rellax  -->
+    <!-- <script src="assets/js/rellax.min.js"></script> -->
+    <!-- <script src="assets/js/rellax-custom.js"></script> -->
+    <!-- smooth scroll  -->
+    <script src="assets/js/smooth-scroll.js"></script>
+    <!-- custom js  -->
+    <script src="JS/main.js"></script>
+    <script src="JS/contact.js"></script>
+
+
+    <script type="text/javascript " src="JS/more.js"></script>
+        
+</body>
+
+</html>

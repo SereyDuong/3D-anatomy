@@ -1,0 +1,25 @@
+{
+  "name": "3d_anatomy",
+  "version": "1.0.0",
+  "description": "website which is provide more efficiency base knowledge through internal organ parts of human.",
+  "main": "index.js",
+  "scripts": {
+    "test": "echo \"Error: no test specified\" && exit 1"
+  },
+  "repository": {
+    "type": "git",
+    "url": "git+https://github.com/NDarayut/3D_Anatomy.git"
+  },
+  "keywords": [],
+  "author": "",
+  "license": "ISC",
+  "bugs": {
+    "url": "https://github.com/NDarayut/3D_Anatomy/issues"
+  },
+  "homepage": "https://github.com/NDarayut/3D_Anatomy#readme",
+  "dependencies": {
+    "@tailwindcss/cli": "^4.0.0",
+    "emailjs-com": "^3.2.0",
+    "tailwindcss": "^4.0.0"
+  }
+}
