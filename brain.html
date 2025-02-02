@@ -20,6 +20,45 @@
     <!-- custom css  -->
     <link rel="stylesheet" href="brain.css" />
     <link href="./src/output.css" rel="stylesheet">
+
+    <!-- Import map for Three.js and addons -->
+    <script type="importmap">
+      {
+        "imports": {
+          "three": "https://cdn.jsdelivr.net/npm/three@0.149.0/build/three.module.js",
+          "three/addons/": "https://cdn.jsdelivr.net/npm/three@0.149.0/examples/jsm/"
+        }
+      }
+    </script>
+
+    <style>
+      body {
+        margin: 0;
+        overflow: hidden;
+      }
+      /* Container for the Three.js viewer */
+      #viewer {
+        width: 1500%;
+        height: 300px; /* Increase the height for a larger model display */
+        background: #ffffff;
+      }
+      /* Container for both viewer and slider, using flex to separate model and text */
+      .flex-container {
+        display: flex;
+        align-items: flex-start;
+        margin-top: 150px;
+      }
+      .content {
+        margin-left: 20px;
+      }
+      /* Style for the slider - placed below the viewer */
+      #clippingSlider {
+        display: block;
+        width: 90%;
+        margin: 10px auto;
+      }
+    </style>
+
   </head>
 
   <body class="h-auto">
@@ -57,13 +96,15 @@
           <div class="container">
             <div class="row">
               <div class="col-lg-12">
-
-                <div class="my-[150px] flex">
-
-                    <div class="w-1/4 mr-[150px]">
-                      <model-viewer src="3d file/Brain.glb" alt="A 3D model of a human heart" camera-controls auto-rotate="false" style=" height: 250px;"></model-viewer>
-                      <script type="module" src="https://unpkg.com/@google/model-viewer/dist/model-viewer.min.js"></script>
-                    </div>
+                
+                <div class="flex-container">
+                  <!-- Container for Three.js scene (left side) -->
+                  <div>
+                    <div id="viewer"></div>
+                    <!-- Slider placed immediately below the viewer -->
+                    <input type="range" id="clippingSlider" step="0.1" />
+                  </div>
+                  <!-- Other content on the right -->
                      
                       <div>
                         <h2 class="sec-h2">Overview</h2>
@@ -731,5 +772,141 @@
 
     <!-- custom js  -->
     <script src="JS/main.js"></script>
+
+    <!-- Make sure you have a container with id "viewer" in your HTML
+    <div id="viewer" style="width:100%; height:250px; background:#ffffff;"></div> -->
+
+    <!-- Inline Three.js Script -->
+    <script type="module">
+      import * as THREE from "three";
+      import { GLTFLoader } from "three/addons/loaders/GLTFLoader.js";
+      import { OrbitControls } from "three/addons/controls/OrbitControls.js";
+
+      // Get the viewer container and its dimensions
+      const viewer = document.getElementById("viewer");
+      const width = viewer.clientWidth;
+      const height = viewer.clientHeight;
+
+      // Scene setup
+      const scene = new THREE.Scene();
+      scene.background = new THREE.Color(0xffffff); // White background
+
+      // Create camera using the container's dimensions
+      const camera = new THREE.PerspectiveCamera(75, width / height, 0.1, 1000);
+
+      // Create renderer and set its size to the container's dimensions
+      const renderer = new THREE.WebGLRenderer({ antialias: true });
+      renderer.setSize(width, height);
+      // Append the canvas to the viewer container
+      viewer.appendChild(renderer.domElement);
+
+      // Enable clipping
+      renderer.localClippingEnabled = true;
+
+      // Lighting adjustments
+      const ambientLight = new THREE.AmbientLight(0xffffff, 0.5);
+      scene.add(ambientLight);
+
+      const directionalLight = new THREE.DirectionalLight(0xffffff, 0.3);
+      directionalLight.position.set(12, 12, 12);
+      scene.add(directionalLight);
+
+      const pointLight = new THREE.PointLight(0xffffff, 2);
+      pointLight.position.set(0, 5, 5);
+      scene.add(pointLight);
+
+      // OrbitControls for navigation
+      const controls = new OrbitControls(camera, renderer.domElement);
+      controls.enableDamping = true;
+      controls.dampingFactor = 0.05;
+      controls.screenSpacePanning = false;
+      controls.minDistance = 2;
+      controls.maxDistance = 30;
+      controls.enableZoom = true;
+
+      // Create a clipping plane (normal along +X)
+      const clippingPlane = new THREE.Plane(new THREE.Vector3(1, 0, 0), 0);
+      // (Optional) We do not add a PlaneHelper so the clipping plane remains invisible.
+
+      // Get the slider element
+      const slider = document.getElementById("clippingSlider");
+
+      // Load 3D model
+      const gltfLoader = new GLTFLoader();
+      let model;
+      gltfLoader.load(
+        "3d file/Brain.glb",
+        (gltf) => {
+          model = gltf.scene;
+          model.scale.set(70, 70, 70);
+
+          // Apply clipping to all meshes of the model
+          model.traverse((child) => {
+            if (child.isMesh) {
+              child.material.clippingPlanes = [clippingPlane];
+              child.material.clipIntersection = false;
+            }
+          });
+
+          scene.add(model);
+
+          // Center the model
+          const box = new THREE.Box3().setFromObject(model);
+          const center = box.getCenter(new THREE.Vector3());
+          model.position.sub(center);
+
+          // Recalculate bounding box after centering
+          const newBox = new THREE.Box3().setFromObject(model);
+          const size = newBox.getSize(new THREE.Vector3());
+          // For a centered model, newBox.min.x is -width/2 and newBox.max.x is width/2.
+          // Set the slider range:
+          // slider.min = 0 means no clipping (clipping plane is at far right, x = width/2)
+          // slider.max = size.x/2 means the clipping plane reaches the center (x = 0)
+          slider.min = 0;
+          slider.max = size.x / 2;
+          slider.value = 0; // default: full model visible
+
+          // Set the clipping plane constant using an inverted mapping:
+          // When slider.value = 0, clippingPlane.constant = slider.max.
+          clippingPlane.constant = slider.max - slider.value;
+
+          animate();
+        },
+        undefined,
+        (error) => {
+          console.error("Error loading the model: ", error);
+        }
+      );
+
+      // Adjust camera position
+      camera.position.set(0, 3, 12);
+      camera.lookAt(0, 0, 0);
+
+      // Animation loop
+      function animate() {
+        requestAnimationFrame(animate);
+        controls.update();
+        renderer.render(scene, camera);
+      }
+
+      // Resize handler: update renderer and camera based on viewer container dimensions
+      window.addEventListener("resize", () => {
+        const newWidth = viewer.clientWidth;
+        const newHeight = viewer.clientHeight;
+        camera.aspect = newWidth / newHeight;
+        camera.updateProjectionMatrix();
+        renderer.setSize(newWidth, newHeight);
+      });
+
+      // Update clipping plane based on slider input
+      slider.addEventListener("input", (event) => {
+        const value = parseFloat(event.target.value);
+        // Inverted mapping:
+        // slider.value = 0 -> clippingPlane.constant = slider.max (no clipping)
+        // slider.value = slider.max -> clippingPlane.constant = 0 (clipping at center)
+        clippingPlane.constant = slider.max - value;
+      });
+    </script>
+
   </body>
 </html>
